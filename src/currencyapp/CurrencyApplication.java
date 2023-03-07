@@ -19,9 +19,9 @@ double convertCurrency (double exchangeRate, double amountUSD ) {
 		
 	}
 
-public boolean usValidator(double us) throws CurrencyApplicationException {
+public boolean usValidator(double US) throws CurrencyApplicationException {
 	boolean result = false;
-	if (us > 0) {
+	if (US > 0) {
 		result = true;
 	}
 	else {
@@ -30,9 +30,9 @@ public boolean usValidator(double us) throws CurrencyApplicationException {
 	return result;
 }
 
-public boolean conventerValidator(double value) throws CurrencyApplicationException {
+public boolean conventerValidator(double exchangeRate) throws CurrencyApplicationException {
 	boolean result = false;
-	if (value > 0) {
+	if (exchangeRate > 0) {
 		result = true;
 	}
 	else {
@@ -41,8 +41,8 @@ public boolean conventerValidator(double value) throws CurrencyApplicationExcept
 	return result;
 }
 
-public double currencyConventer(double us, double conventer) throws CurrencyApplicationException {
-	return us*conventer;
+public double currencyConventer(double US, double exchangeRate) throws CurrencyApplicationException {
+	return US*exchangeRate;
 }
 
 }
