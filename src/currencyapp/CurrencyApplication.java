@@ -20,19 +20,29 @@ double convertCurrency (double exchangeRate, double amountUSD ) {
 	}
 
 public boolean usValidator(double us) throws CurrencyApplicationException {
-	throw new CurrencyApplicationException("Product code not yet written");
-}
-
-public boolean euroValidator(double euro) throws CurrencyApplicationException {
-	throw new CurrencyApplicationException("Product code not yet written");
+	boolean result = false;
+	if (us > 0) {
+		result = true;
+	}
+	else {
+		throw new CurrencyApplicationException("US cannot be less or equal to 0");
+	}
+	return result;
 }
 
 public boolean conventerValidator(double value) throws CurrencyApplicationException {
-	throw new CurrencyApplicationException("Product code not yet written");
+	boolean result = false;
+	if (value > 0) {
+		result = true;
+	}
+	else {
+		throw new CurrencyApplicationException("CONVERSION cannot be less or equal to 0");
+	}
+	return result;
 }
 
-public double currencyConventer(double us, double euro) throws CurrencyApplicationException {
-	throw new CurrencyApplicationException("Product code not yet written");
+public double currencyConventer(double us, double conventer) throws CurrencyApplicationException {
+	return us*conventer;
 }
 
 }

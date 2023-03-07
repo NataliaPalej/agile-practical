@@ -1,6 +1,3 @@
-/**
- * 
- */
 package currencyapp;
   
 import org.junit.Test;
@@ -40,48 +37,11 @@ public class CurrencyApplicationTest extends TestCase {
         CurrencyApplication test002 = new CurrencyApplication();
         try {
             boolean result = test002.usValidator(-30);
+            assertEquals(false, result);
             fail("Exception Expected");
         }
         catch (CurrencyApplicationException e) {
             assertEquals("US cannot be less or equal to 0", e.getMessage());
-        }
-    }
-    
-    @Test
-    public void euroValidator001() {
-        /**
-         * Test #1
-         * Objective: Verify valid euro > 0
-         * Input: 15
-         * Output: true
-         */
-        CurrencyApplication test001 = new CurrencyApplication();
-        
-        try {
-            boolean result = test001.euroValidator(15);
-            assertEquals(true, result);
-        }
-        catch (CurrencyApplicationException e) {
-            fail("Exception NOT expected!");
-        }
-        
-    }
-    
-    @Test
-    void euroValidator002() {
-        /**
-         * Test #2
-         * Objective: Verify invalid  euro <= 0
-         * Input: -10
-         * Output: Value cannot be less or equal to 0 // False
-         */
-        CurrencyApplication test002 = new CurrencyApplication();
-        try {
-            boolean result = test002.euroValidator(-10);
-            fail("Exception Expected");
-        }
-        catch (CurrencyApplicationException e) {
-            assertEquals("Euro cannot be less or equal to 0", e.getMessage());
         }
     }
     
@@ -116,10 +76,11 @@ public class CurrencyApplicationTest extends TestCase {
         CurrencyApplication test002 = new CurrencyApplication();
         try {
             boolean result = test002.conventerValidator(-1.2);
+            assertEquals(false, result);
             fail("Exception Expected");
         }
         catch (CurrencyApplicationException e) {
-            assertEquals("Euro cannot be less or equal to 0", e.getMessage());
+            assertEquals("CONVERSION cannot be less or equal to 0", e.getMessage());
         }
     }
     
@@ -134,7 +95,7 @@ public class CurrencyApplicationTest extends TestCase {
         CurrencyApplication test001 = new CurrencyApplication();
         try {
             double result = test001.currencyConventer(1, 1.5);
-            assertEquals(1.5 + "EURO", result);
+            assertEquals(1.5, result);
         }
         catch (CurrencyApplicationException e) {
             fail("Exception NOT expected!");
