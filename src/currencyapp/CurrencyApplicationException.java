@@ -1,5 +1,6 @@
 package currencyapp;
 
+@SuppressWarnings("serial")
 public class CurrencyApplicationException extends Exception {
 	
 	String message;
